@@ -1,0 +1,14 @@
+{
+  "name": "to_do",
+  "version": "1.0.0",
+  "description": "a basic TODO application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SumitKumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
