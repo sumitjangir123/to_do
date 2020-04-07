@@ -1,11 +1,16 @@
+//setting up express server
 const express=require('express');
-const app=express();
 const port = 8000;
+
+//express functions
+const app=express();
+app.use(express.urlencoded());
+app.use(express.static('assets'));
 
 //use express router
 app.use('/',require("./routes/index.js"));
 
-//set up ejs 
+//set up ejs
 app.set("view engine","ejs");
 app.set("views","./views");
 
