@@ -2,6 +2,7 @@
     color: grey;
     font-family: sans-serif;
     text-align: center;
+    margin-bottom: 50px;
 }
 body{
     margin: 0;
@@ -14,6 +15,13 @@ body{
     margin: auto;
     padding-bottom: 10px;
     background-color: white;
+    background-image: linear-gradient(to right,white,#e8f0fe);
+    box-shadow: gray 2px 2px 10px 5px;
+    border-radius: 20px;
+}
+.outer-div:hover{
+  transition-duration: 0.5s;
+  box-shadow: none;
 }
 
 *{
@@ -26,9 +34,10 @@ input[type=text],input[type=date], select{
     border: black solid;
     border-width: 1px 0px 1px 0px;
     font-size: 1.2rem;
+    background-image: linear-gradient(to right,white,#e8f0fe);
 }
 input[type="date"]::-webkit-calendar-picker-indicator{
-    color: rgba(0, 0, 0,0);
+    color: rgba(100, 72, 72, 0);
     opacity: 1;
     background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
     width: 20px;
@@ -52,6 +61,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       margin: 10px;
       border-radius:20px;
       outline: none;
+      font-size: 15px;
   }
   .button1{
     background-image: linear-gradient(to right,#27f19a,#0cb8db);
@@ -71,3 +81,24 @@ input[type="date"]::-webkit-calendar-picker-indicator{
   input:hover{
       background-color: gainsboro;
   }
+
+  li{
+    background-image: linear-gradient(to right,#b7dff1,#6b848f);
+    border: solid #6c8691;
+    list-style: none;
+    border-width: 2px 0px 2px 2px;
+      border-bottom-left-radius: 20px;
+      margin-bottom: 10px;
+      border-top-left-radius: 20px;
+  }
+  li .checks{
+    margin-left: -25px;
+    margin-top: 30px;
+    position: absolute;
+    transform: scale(1.5);
+  }
+  li:hover{
+    box-shadow: #775f91 1px 1px 10px 0px;
+    transition-duration: 0.3s;
+  }
+  

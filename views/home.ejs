@@ -2,25 +2,29 @@
 
 <head>
     <title><%= title%></title>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-    <h1 class="heading">
+    
+    <h1 class="heading"><i class="fas fa-clipboard"></i>
         TODO APP
     </h1>
 
     <div class="outer-div">
         <form action="/create-todo" method="POST">
 
+            <!-- description section -->
             <div class="row" id="ding-ding">
                 <div class="inner-heading">
                     <p>DESCRIPTION <i class="fa fa-info-circle"></i></p>
                 </div>
-                <input type="text" id="fname" name="description" placeholder="What do you need to do?" autofocus required>
+                <input type="text" id="fname" name="description" placeholder="What do you need to do?" autofocus
+                    required>
             </div>
 
+            <!-- category section -->
             <div class="row">
                 <div class="inner-heading">
                     <p>CATEGORY <i class="fa fa-list-alt" aria-hidden="true"></i></p>
@@ -34,24 +38,31 @@
                 </select>
             </div>
 
-
+            <!-- date section -->
             <div class="row">
                 <div class="inner-heading">
-                    <p>DUE DATE <i class="fas fa-calendar-edit"></i></p>
+                    <p>DUE DATE <i class="fas fa-calendar"></i></p>
                 </div>
                 <input type="date" id="lname" name="date" placeholder="Your last name.." required>
             </div>
 
+            <!-- add and delete buttons -->
 
             <div class="buttons">
-                <button class="button1 btn_stl" type="submit"><i class="fa fa-tasks" aria-hidden="true"></i> ADD TASK</i></button>
-                <button class="button2 btn_stl"><i class="fa fa-trash"></i> DELETE TASKS </button>
+                <button class="button1 btn_stl" type="submit" id="add_task"><i class="fa fa-tasks" aria-hidden="true"></i> ADD
+                    TASK</i></button>
+                <button class="button2 btn_stl" type="button" id="checku"><i class="fa fa-trash"></i> DELETE
+                    TASKS</button>
             </div>
         </form>
 
-        <ul>
+        <!-- TASKS list -->
+       <ul>
             <% for(let i of task_list) {%>
             <li>
+                <div class="checks">
+                    <input type="checkbox" value="<%=i._id%>">
+                </div>
                 <div class="list">
                     <p>Description : <%=i.description%> </p>
                     <p>Category : <%=i.category%></p>
@@ -60,8 +71,8 @@
             </li>
             <%}%>
         </ul>
-
-    </div>
+    </div> 
+    <script type="text/javascript" src="/js/home.js"></script>
 </body>
 
 </html>

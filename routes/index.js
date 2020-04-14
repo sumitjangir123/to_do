@@ -8,5 +8,7 @@ console.log("router loaded !!");
 const homeController=require('../controllers/home_controller');
 router.get("/",homeController.home);
 router.post('/create-todo',homeController.add_in_list);
+router.get("/delete-task",homeController.delete_tasks);
+
 //make it for outer index.js
 module.exports =router;

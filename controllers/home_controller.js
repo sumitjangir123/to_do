@@ -1,9 +1,7 @@
 const db=require('../config/mongoose');
 const todoList=require('../models/todo_list');
 
-// const app=express();
-// app.use(express.urlencoded());
-
+//home controller
 module.exports.home=function(req,res){
 
     todoList.find({},function(err,list_After){
@@ -18,6 +16,7 @@ module.exports.home=function(req,res){
     })
 }
 
+//adding controller
 module.exports.add_in_list=function(req,res){
 
     todoList.create({
@@ -33,4 +32,21 @@ module.exports.add_in_list=function(req,res){
             console.log("*****",newTask);
             return res.redirect('back');
         })
+}
+
+//delete controller
+module.exports.delete_tasks=function(req,res){
+
+    for(i in req.query.id){
+
+        let id=req.query.id;
+
+        todoList.findByIdAndDelete(id,function(err){
+                if(err){
+                    console.log("error in deleting task from database !!! ");
+                    return;
+                }
+        });
+    }
+    return res.redirect('back');
 }
